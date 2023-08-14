@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="game.css" media="screen" />
+    <title>GAME</title>
+</head>
+<body>
+    <div class="container">
+        <div class="cont">
+            <p class="word">check your luck here !</p>
+            <p id="c" class="hund">100%</p>
+            <p id="ele"> </p>
+            <button id="but" onclick="begin()">start</button>
+        </div>
+    </div>
+
+    <script>
+        let c = document.getElementById("c");
+        let a = document.getElementById("ele");
+        let randomNumber = Math.floor(Math.random() * 100) + 1;
+        let info = " "
+
+        function begin() {
+            c.innerText = randomNumber.toString();
+
+            if(c.innerText <= 25) {
+                info = "bad day"
+            }
+
+            else if(c.innerText >25  && c.innerText <= 50) {
+                info = "great !"
+            }
+
+            else if(c.innerText > 50 && c.innerText <= 75) {
+                info =  "chill"
+            }
+
+            else if(c.innerText > 75 && c.innerText <= 100) {
+                info = "fabulous"
+            }
+
+            a.innerText = info
+        }
+    </script>
+</body>
+</html> 
